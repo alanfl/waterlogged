@@ -1,26 +1,44 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './assets/images/logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Bottle>
+      </Bottle>
     </div>
   );
+}
+
+function Bottle(prop) {
+  let currentWaterLevel = 0;
+
+  return (
+    <div className='Bottle'>
+      <label
+        for='water-level'
+      >
+        Current Water Level {currentWaterLevel}
+      </label>
+      <input
+        type='range'
+        id='water-level'
+        orient='vertical'
+        min='0'
+        max='100'
+      />
+      <input
+        type='button'
+        id='water-level-button'
+        value='log'
+      />
+    </div>
+  );
+}
+
+function DropdownMenu(prop) {
+
 }
 
 export default App;
