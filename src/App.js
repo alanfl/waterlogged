@@ -1,5 +1,7 @@
 import React from 'react';
 import {cloneDeep} from 'lodash'
+import {Dropdown} from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 let initialState = {
@@ -23,6 +25,13 @@ function App(prop) {
   return (
     <Context.Provider value={[state, dispatch]}>
       <div className="App">
+        <div className="MainMenu">
+          <MainMenu />
+        </div>
+        
+        <br />
+        <br />
+        
         <BottleContainer />
         {
           state.bottles.map((val, idx) => 
@@ -72,6 +81,28 @@ function Bottle(prop) {
       />
     </div>
   );
+}
+
+function MainMenu(props) {
+  return (
+    <Dropdown>
+      <Dropdown.Toggle variant="success" id="dropdown-basic">
+        Dropdown Button
+      </Dropdown.Toggle>
+
+      <Dropdown.Menu>
+        <Dropdown.Item href="#/action-1">
+          Calendar
+        </Dropdown.Item>
+        <Dropdown.Item href="#/action-2">
+          Profile
+        </Dropdown.Item>
+        <Dropdown.Item href="#/action-2">
+          Settings
+        </Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+  )
 }
 
 export default App;

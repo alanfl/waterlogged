@@ -7,9 +7,20 @@
   pointer-events: none;
 }
 
+.MainMenu {
+  float: left;
+}
+
+.BottleContainer {
+  margin: auto;
+  text-align: center;
+  padding: 0 5px;
+  display: inline-block
+}
+
 .Bottle {
+  margin: auto;
   width: 8px;
   height: 175px;
-  padding: 0 5px;
-  margin: auto
 }
+
