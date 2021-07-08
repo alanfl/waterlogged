@@ -2,9 +2,15 @@ import React from 'react'
 import { cloneDeep, isNull } from 'lodash'
 
 let InitialState = {
-    bottles: [50],
+    bottles: [
+        {
+            waterLevel: 50,
+            min: 0,
+            max: 100,
+            log: []
+        }
+    ],
     currentBottle: 0,
-    log: {}
 }
   
 const Context = React.createContext(InitialState)
@@ -13,23 +19,26 @@ function Reducer(state, action) {
     let new_state = cloneDeep(state)
   
     if(action.type === "waterLevelUpdate") new_state = updateBottleWaterLevel(new_state, action)
-    if(action.type === "log") new_state = logWaterLevel(new_state, action)
+    if(action.type === "log") new_state = logWaterLevel(new_state)
   
     return new_state
 }
 
 function updateBottleWaterLevel(state, action) {
-    state.bottles[action.payload.idx] = action.payload.val
+    
+    let bottle = state.bottles[state.currentBottle]
+    bottle.waterLevel = action.payload.val
 
     return state
 }
 
-function logWaterLevel(state, action) {
-    console.log(action)
+function logWaterLevel(state) {
 
-    if(state.log[action.payload.idx] === null) state.log[action.payload.idx] = [];
-
-    state.log[action.payload.idx].push({timestamp: Date.now(), val: action.payload.val})
+    let bottle = state.bottles[state.currentBottle]
+    bottle.log.push({
+        timestamp: Date.now(),
+        waterLevel: bottle.waterLevel
+    })
 
     return state
 }
