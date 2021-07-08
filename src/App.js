@@ -1,4 +1,5 @@
 import './App.css';
+import './MainMenu.css'
 import React from 'react';
 import { useReducer } from 'react'
 import { MainMenu } from './MainMenu.js'
@@ -18,7 +19,7 @@ function App(prop) {
           <MainMenu />
           <Switch>
             <Route exact path="/"><Bottle /></Route>
-            <Route path="/log"></Route>
+            <Route path="/log"><Log /></Route>
           </Switch>
         </Router>     
         <br />

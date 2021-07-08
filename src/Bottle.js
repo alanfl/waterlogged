@@ -17,6 +17,27 @@ function Bottle(prop) {
           })
         }
       >
+        <span
+          class="refill material-icons"
+          onClick ={ (event) => {
+            dispatch({ 
+              type: 'waterLevelUpdate', 
+              payload: {
+                idx: prop.idx, 
+                val: 100 
+              }
+            });
+            dispatch({
+              type: 'log',
+              payload: {
+                idx: prop.idx,
+                val: 100
+              }
+            });
+          }
+        }>
+          Refill Bottle
+        </span>
         <input
           type='range' class="Slider"
           id='water-level'
