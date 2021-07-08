@@ -32,7 +32,9 @@ function Bottle(prop) {
           onChange = { (event) => {
             dispatch({
               type: 'waterLevelUpdate',
-              payload: event.target.value
+              payload: {
+                val: event.target.value
+              }
             })
           }}
         />
