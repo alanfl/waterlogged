@@ -44,6 +44,13 @@ function logWaterLevel(state) {
     return state
 }
 
+function changeCurrentBottle(state, action) {
+
+    let new_current = action.payload.val
+    state.currentBottle = new_current
+    return state
+}
+
 export {
     Context,
     Reducer,

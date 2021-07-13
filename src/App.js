@@ -1,12 +1,12 @@
 import './App.css';
-import './MainMenu.css'
 import React from 'react';
 import { useReducer } from 'react'
 import { MainMenu } from './MainMenu.js'
 import { InitialState, Context, Reducer } from './Context.js';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import Bottle from './Bottle.js'
 import Log from './Log.js'
+import MainInteract from './MainInteract';
 
 function App(prop) {
   const [state, dispatch] = useReducer(Reducer, InitialState)
@@ -22,8 +22,7 @@ function App(prop) {
             <Route path="/log"><Log /></Route>
           </Switch>
         </Router>     
-        <br />
-        <br />  
+        <MainInteract />  
       </div>
     </Context.Provider>
   );
