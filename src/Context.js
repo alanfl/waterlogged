@@ -6,7 +6,7 @@ let InitialState = {
         {
             waterLevel: 50,
             min: 0,
-            max: 100,
+            max: 200,
             log: []
         }
     ],

@@ -23,10 +23,13 @@ function Bottle(prop) {
         }>
           Refill Bottle
         </span>
+        <br />
         <input
           type='range' class="Slider"
           id='water-level'
           orient='vertical'
+          min={state.bottles[state.currentBottle].min}
+          max={state.bottles[state.currentBottle].max}
           value={state.bottles[state.currentBottle].waterLevel}
           onChange = { (event) => {
             dispatch({
@@ -37,6 +40,12 @@ function Bottle(prop) {
             })
           }}
         />
+        <br />
+        <label 
+          for="water-level"
+        >
+          {state.bottles[state.currentBottle].waterLevel}
+        </label>
       </div>
     );
 }
