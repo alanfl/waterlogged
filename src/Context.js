@@ -20,7 +20,8 @@ function Reducer(state, action) {
   
     if(action.type === "waterLevelUpdate") new_state = updateBottleWaterLevel(new_state, action)
     if(action.type === "log") new_state = logWaterLevel(new_state)
-  
+    if(action.type === "changeBottle") new_state = changeCurrentBottle(new_state)
+
     console.log(new_state)
     return new_state
 }
