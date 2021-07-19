@@ -5,15 +5,17 @@ import { Context } from './Context.js'
 function Bottle(prop) {
     let [state, dispatch] = useContext(Context)
 
+    let currentBottle = state.bottles[state.currentBottle]
+
     return (
       <div className='Bottle'>
         <span
-          class="refill material-icons"
+          className="refill material-icons"
           onClick ={ (event) => {
             dispatch({ 
               type: 'waterLevelUpdate', 
               payload: {
-                val: "100" 
+                val: currentBottle.max 
               }
             });
             dispatch({
@@ -25,12 +27,12 @@ function Bottle(prop) {
         </span>
         <br />
         <input
-          type='range' class="Slider"
+          type='range' className="Slider"
           id='water-level'
           orient='vertical'
-          min={state.bottles[state.currentBottle].min}
-          max={state.bottles[state.currentBottle].max}
-          value={state.bottles[state.currentBottle].waterLevel}
+          min={currentBottle.min}
+          max={currentBottle.max}
+          value={currentBottle.waterLevel}
           onChange = { (event) => {
             dispatch({
               type: 'waterLevelUpdate',
@@ -42,9 +44,9 @@ function Bottle(prop) {
         />
         <br />
         <label 
-          for="water-level"
+          htmlFor="water-level"
         >
-          {state.bottles[state.currentBottle].waterLevel}
+          {currentBottle.waterLevel}
         </label>
       </div>
     );

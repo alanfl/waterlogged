@@ -18,11 +18,11 @@ function App(prop) {
         <Router>
           <MainMenu />
           <Switch>
-            <Route exact path="/"><Bottle /></Route>
-            <Route path="/log"><Log /></Route>
+            <Route exact path="/"><Bottle /><MainInteract /></Route>
+            <Route exact path="/log"><Log /></Route>
           </Switch>
         </Router>     
-        <MainInteract />  
+        
       </div>
     </Context.Provider>
   );

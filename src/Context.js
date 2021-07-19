@@ -7,7 +7,7 @@ let InitialState = {
             waterLevel: 50,
             min: 0,
             max: 200,
-            log: []
+            log: [{ timestamp: 1626737443478, waterLevel: "103" }]
         }
     ],
     currentBottle: 0,

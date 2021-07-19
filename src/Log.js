@@ -7,10 +7,10 @@ function Log() {
     return (
         <div className="Log">
             {
-                state.log.map((item, idx) =>
+                state.bottles[state.currentBottle].log.map((item, idx) =>
                     <div>
-                        <span>{item.timestamp}</span>
-                        <span>{item.val}</span>
+                        <span>{item.timestamp} | </span>
+                        <span>{item.waterLevel}</span>
                     </div>
                 )
             }

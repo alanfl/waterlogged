@@ -11,10 +11,10 @@ function MainMenu(prop) {
         </Dropdown.Toggle>
   
         <Dropdown.Menu>
-          <Dropdown.Item tag={Link} to="/">
+          <Dropdown.Item as={Link} to="/">
             Home
           </Dropdown.Item>
-          <Dropdown.Item tag={Link} to="/log">
+          <Dropdown.Item as={Link} to="/log">
             Calendar
           </Dropdown.Item>
         </Dropdown.Menu>
