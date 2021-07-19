@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-waterlogged-dev-161720-authRole",
+      "UnauthRoleArn": "arn:aws:iam::632471031580:role/amplify-waterlogged-dev-161720-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::632471031580:role/amplify-waterlogged-dev-161720-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-waterlogged-dev-161720-deployment",
+      "UnauthRoleName": "amplify-waterlogged-dev-161720-unauthRole",
+      "StackName": "amplify-waterlogged-dev-161720",
+      "StackId": "arn:aws:cloudformation:us-east-1:632471031580:stack/amplify-waterlogged-dev-161720/55a5fa60-e8ce-11eb-9f57-0acf59e535ed",
+      "AmplifyAppId": "d24n8vb1zi36q6"
+    },
+    "categories": {
+      "function": {
+        "waterloggedHandler": {
+          "deploymentBucketName": "amplify-waterlogged-dev-161720-deployment",
+          "s3Key": "amplify-builds/waterloggedHandler-54593768354e77745247-build.zip"
+        }
+      }
+    }
+  }
+}

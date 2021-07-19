@@ -1,0 +1,35 @@
+{
+  "paths": [
+    {
+      "name": "/log",
+      "lambdaFunction": "waterloggedHandler",
+      "privacy": {
+        "open": true
+      },
+      "policyResourceName": "/log"
+    }
+  ],
+  "resourceName": "waterloggedAPI",
+  "apiName": "waterloggedAPI",
+  "functionArns": [
+    {
+      "lambdaFunction": "waterloggedHandler"
+    }
+  ],
+  "privacy": {
+    "auth": 0,
+    "unauth": 0,
+    "authRoleName": "amplify-waterlogged-dev-161720-authRole",
+    "unAuthRoleName": "amplify-waterlogged-dev-161720-unauthRole"
+  },
+  "dependsOn": [
+    {
+      "category": "function",
+      "resourceName": "waterloggedHandler",
+      "attributes": [
+        "Name",
+        "Arn"
+      ]
+    }
+  ]
+}
