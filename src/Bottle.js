@@ -30,7 +30,7 @@ function Bottle(prop) {
           type='range' className="Slider"
           id='water-level'
           orient='vertical'
-          min={currentBottle.min}
+          min="0"
           max={currentBottle.max}
           value={currentBottle.waterLevel}
           onChange = { (event) => {
