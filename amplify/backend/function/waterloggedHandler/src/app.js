@@ -8,6 +8,8 @@ See the License for the specific language governing permissions and limitations 
 
 
 
+// TODO use AWS secret manager
+require('dotenv').config()
 
 var express = require('express')
 var bodyParser = require('body-parser')
@@ -25,6 +27,19 @@ app.use(function(req, res, next) {
   next()
 });
 
+// Establish SQL connection
+var mysql = require('mysql');
+const conn = mysql.createConnection({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME
+});
+
+conn.connect((err) => {
+  if (err) throw err;
+  console.log("Connected to database.");
+});
 
 /**********************
  * Example get method *
